@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-burgundy: #23070E;
+  --color-wine: #380B17;
+  --color-obsidian: #0C0407;
+  --color-blush: #FDECE8;
+  --color-gold: #D4AF37;
+  --color-rose: #E11D48;
+}
+
+/* Smooth Scrolling & Overflow Protections */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  background-color: #0C0407;
+  color: #FDECE8;
+}
+
+/* Custom discreet luxury scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C0407;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #420F20;
+  border-radius: 9999px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60162F;
+}
+
+/* Fluid Typography Utilities */
+.text-fluid-hero {
+  font-size: clamp(2.25rem, 6vw + 1rem, 4.5rem);
+  line-height: 1.1;
+}
+
+.text-fluid-title {
+  font-size: clamp(1.75rem, 4vw + 0.5rem, 3.25rem);
+  line-height: 1.2;
+}
+
+.text-fluid-subtitle {
+  font-size: clamp(1rem, 2vw + 0.25rem, 1.35rem);
+  line-height: 1.5;
+}
+
+.text-fluid-body {
+  font-size: clamp(0.95rem, 1.2vw + 0.2rem, 1.15rem);
+  line-height: 1.7;
+}
+
+.text-fluid-quote {
+  font-size: clamp(1.15rem, 2.5vw + 0.2rem, 1.75rem);
+  line-height: 1.4;
+}
+
+/* Parchment / Letter Styling */
+.parchment-card {
+  background: #FAF6EE;
+  background-image: 
+    radial-gradient(#E8DEC8 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(245, 239, 227, 0.9));
+  background-size: 20px 20px, 100% 100%;
+  color: #261117;
+  box-shadow: 
+    0 10px 30px -5px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(212, 175, 55, 0.25),
+    inset 0 0 60px rgba(184, 147, 39, 0.08);
+}
+
+/* Glassmorphism Luxury Cards */
+.glass-panel {
+  background: rgba(35, 7, 14, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(247, 180, 166, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(56, 11, 23, 0.75);
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(225, 29, 72, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Gilded & Shimmering Borders */
+.gold-glow {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+.rose-glow {
+  box-shadow: 0 0 30px rgba(225, 29, 72, 0.25);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FBF8F1 0%, #E4C767 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-rose-gradient {
+  background: linear-gradient(135deg, #FFF0ED 0%, #F8C3B9 40%, #E11D48 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Safe Area Insets for modern mobile notched displays */
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pl-safe {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+.pr-safe {
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Touch-friendly target minimum */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
